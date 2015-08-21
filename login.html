@@ -21,7 +21,7 @@
     </head>
     <body>
 	<div id="title">
-		<img src="img/logo.png" alt="" id="title_image" style="padding:5px 0 0 0;" /> <span id="title_text">Login</span>		
+		<img src="img/logo.png" alt="" id="title_image" style="padding:5px 0 0 0;" /> 		
 	</div>
 	<!--<div class="rmm" data-menu-style = "minimal">
             <ul>
@@ -37,6 +37,7 @@
     </div>-->
 	<div id="container">
 		<form name="contact" id="contact" method="post">
+			<span class="page_title"><h2>Login</h2></span>
 			<ul>
 				<li>Username</li>
 				<li><input type="text" name="uname" id="uname" class="txt"/></li>
@@ -44,8 +45,26 @@
 				<li><input type="password" name="pass" id="pass" class="txt"/></li>
 				<li><input type="button" value="Login" name="submit" id="submit" class="button"/>
 				</li>
-				<li><a href="login.html" title="login">Login</a></li>
-			</ul>				 			
+			</ul>	
+
+			<div class="lv_body">
+				<ul>
+				  <li>
+					<a href="#">
+					<img src="1.png">
+					<h2>Proposal Title</h2>
+					<p>This is a proposal post by Mr.X on 10-10-2010</p>
+					</a>
+				  </li>
+				  <li>
+					<a href="#">
+					<img src="1.png">
+					<h2>Proposal Title 2</h2>
+					<p>This is a proposal post by Mr.X on 10-10-2020</p>
+					</a>
+				  </li>
+				</ul>
+			</div>
 		</form>
 	</div>
 		
@@ -55,7 +74,7 @@
 		 $("#submit").click(function(){		 
 		
             $.ajax({
-            url: "http://www.highyieldindia.com/hyi_2k15/php/login.php",
+            url: "http://192.168.1.4:8080/hyi_2k15/php/login.php",
             type: "POST",
             data: {
                 uname: $("#uname").val(),
@@ -66,7 +85,7 @@
             success: function (jsonStr) {
 				if(jsonStr.success == '1'){
 					alert(jsonStr.message);
-					window.location="welcome.html";
+					window.location="investor_personal_info.html";
 				}else{
 					alert(jsonStr.message);
 				}

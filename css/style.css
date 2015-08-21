@@ -1,10 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Lobster+Two);
+
+/* oragne = ff4800
+   blue = 33a5ee
+   grey = b2b2b2*/
+   
 body
 	{
-		background:#fff;
+		background:#f5f5f5;
 		color:#000;
 		paddin:0;
 		margin:0;
 		margin:0 auto;
+		font-size:20px;
+		/*font-family: 'Indie Flower', cursive;*/
+		font-family: 'Lobster Two', cursive;
 	}
 	#title
 	{
@@ -39,12 +49,13 @@ body
 		padding-bottom:0.5em;
 		border:none;
 		border:0px;
-		border-bottom:1px  solid #efefef;
+		background:#f5f5f5;
+		border-bottom:1px  solid #C4C4C4;
 	}
 	.txt:focus
 	{
 		outline:none;
-		border-bottom:1px  solid #0099cc;
+		border-bottom:1px  solid #e3e3e3;
 	}
 	.txt1
 	{
@@ -60,23 +71,26 @@ body
 		padding-bottom:0.5em;
 		border:none;
 		border:0px;
-		border-bottom:1px  solid #efefef;
+		background:#f5f5f5;
+		border-bottom:1px  solid #C4C4C4;
 	}
 	.txt1:focus
 	{
 		outline:none;
-		border-bottom:1px  solid #0099cc;
+		border-bottom:1px  solid #e3e3e3;
 	}
 	.button
 	{
 		float:left;
 		width:auto;
-		font-size:12pt;
-		background:#0263ad;
+		font-size:20px;
+		background:#ff4800;
 		padding:0.8em 0.8em;
 		border:0;
 		color:#fff;
 		margin-right:1em;
+		/*font-family: 'Indie Flower', cursive;*/
+		font-family: 'Lobster Two', cursive;
 	}
 	ul
 	{
@@ -141,9 +155,96 @@ body
 		margin-left:1%;
 		margin-right:1%;
 		height:auto;
-		font-size:12pt;
+		font-size:20px;
 		color:#000;
 		padding-top:0.5em;
-		padding-bottom:0.5em
-		border:1px  solid #efefef;
+		padding-bottom:0.5em;
+		background:#f5f5f5;
+		border:1px  solid #C4C4C4;
+		font-family: 'Lobster Two', cursive;
 	}
+	
+	.drop:foucs
+	{
+		outline:none;
+		border:1px  solid #C4C4C4;
+	}
+	
+	.page_title
+	{
+		width:100%;
+		margin:0;
+		padding:0;
+	}
+	
+	.page_title h2
+	{
+		margin:0;
+		padding:0;
+		text-align:center;
+		font-size:30px;
+		color:#33a5ee;
+	}
+	
+	/*Listview starts*/
+	.lv_body{
+		/*background:green;*/
+		display:block;
+		margin-top:60px;
+	}
+	
+	.lv_body ul
+	{	
+	}
+	
+	.lv_body li
+	{
+		display:block;
+		list-style-type:none;		
+		border-bottom:1px solid #C4C4C4;
+		display: block;
+		position: relative;
+		overflow: visible;
+		padding-top:0.8em;
+		padding-bottom:0.8em;
+	}
+	
+	.lv_body li:hover
+	{
+		background:#f0f0f0;
+	}
+	
+	.lv_body li  a
+	{
+		text-decoration:none;
+		color:#000;
+		
+	}
+	
+	.lv_body li img
+	{
+		top:0;
+		left:0;
+		position: absolute;		
+		max-height: 4em;
+		max-width: 4em;
+		
+	}
+	
+	.lv_body li p
+	{
+		margin:0;
+		padding:0;
+		margin-left:5.5em;
+		line-height:23px;
+		font-family: 'Indie Flower', cursive;
+	}
+	
+	.lv_body li h2
+	{
+		margin:0;
+		padding:0;
+		margin-left:4em;
+		font-size:20px;
+	}
+	/*Listview ends*/
