@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>High Yield India</title>
+	<!-- CSS -->
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>	
+	<script type="text/javascript" src="js/responsivemobilemenu.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+	<!-- CSS -->
+	<!-- JS -->
+	<link rel="stylesheet" href="css/responsivemobilemenu.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery-ui-timepicker-addon.css" type="text/css"/>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	
+	<link href="css/jquery-ui-1.10.4.custom.css" rel="stylesheet">	
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<!-- JS -->
+	
+    </head>
+    <body>
+	<div id="title">
+		<img src="img/logo.png" alt="" id="title_image" style="padding:5px 0 0 0;" /> <span id="title_text">Registration</span>		
+	</div>
+	<!--<div class="rmm" data-menu-style = "minimal">
+            <ul>
+                <li><a href='home.html'>Home</a></li>
+                <li><a href='food_category_master.html'>Food Category Master</a></li>
+                <li><a href='food_master.html'>Food Master</a></li>
+                <li><a href='utensils_master.html'>Utensils Master</a></li>
+                <li><a href='partybooking.html'>Party Booking</a></li>
+                <li><a href='#sitemap'>Report</a></li> 
+				<li><a href='user_master.html'>User Master</a></li>
+                <li><a href='#about-me'>Logout</a></li>                  
+            </ul>
+    </div>-->
+	<div id="container">
+		<form name="contact" id="contact" method="post">
+			<ul>
+				<li>Name</li>
+				<li><input type="text" name="name" id="name" class="txt" required/></li>				
+				<li>Email-id</li>
+				<li><input type="text" name="emailid" id="emailid" class="txt"/></li>
+				<li>Mobile</li>
+				<li><input type="number" name="mobile" id="mobile" class="txt"/></li>
+				<li>DOB</li>
+				<li><input type="text" id="datepicker" class="txt" style="width:80%;"></li>	
+				<li>User Name</li>
+				<li><input type="text" name="uname" id="uname" class="txt"/></li>
+				<li>Password</li>
+				<li><input type="text" name="pass" id="pass" class="txt"/></li>				
+				<li>Member Type</li>
+				<li>
+					<select name='ddl_membertype' id="ddl_membertype" class="drop">
+					<option value="Entrepreneur">Entrepreneur</option>
+					<option value="Investor">Investor</option>				
+					</select>
+				</li>
+				<li><input type="button" value="Save" name="submit" id="submit" class="button"/></li>
+			</ul>				
+		</form>
+	</div>
+		
+	<script type="text/javascript">
+     $(document).ready(function() {  
+		
+	
+	 <!----   date picker  start----->
+	$( "#datepicker" ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+		showOn: "button",
+		buttonImage: "img/calendar-24.png",
+		buttonImageOnly: true,
+		buttonText: "Select date"
+	});
+	 <!----   date picker  start----->    
+   	
+	 <!----   time picker  start----->
+	$('#timepicker_test1').timepicker(
+	{
+		showOn: "button",
+		buttonImage: "clock.png",
+		buttonImageOnly: true,
+		buttonText: "Select date"
+	});
+	 <!----   time picker  end----->
+	 
+    });	
+    </script>
+		<script type="text/javascript">
+     	
+	 
+		 $("#submit").click(function(){		 
+		
+            $.ajax({
+            url: "http://www.highyieldindia.com/hyi_2k15/php/src_registration.php",
+            type: "POST",
+            data: {
+                name: $("#name").val(),
+				emailid: $("#emailid").val(),
+				mobile: $("#mobile").val(),
+				dob: $("#datepicker").val(),
+				u_name: $("#uname").val(),
+				pwd: $("#pass").val(),				
+				ddl_membertype:$("#ddl_membertype").val()
+				
+            },
+            dataType: "JSON",
+            success: function (jsonStr) {
+		    <!--$("#result").text(JSON.stringify(jsonStr));-->
+				if(jsonStr.success == '1'){
+					alert(jsonStr.message);
+					window.location="login.html";
+				}else{
+					alert(jsonStr.message);
+				}
+            }
+        });
+
+    }); 
+    	
+    </script>
+    </body>
+</html>
