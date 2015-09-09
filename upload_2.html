@@ -42,7 +42,7 @@
 			alert(jsonStr.success);
 		}
 		if(data.success) { //This part happens when the image gets uploaded.
-			/*document.getElementById("image_details").innerHTML = "<img src='http://192.168.1.4:8080/hyi_2015_online/php/image_uploads/" + data.file_name + "' /><br />Size: " + data.size + " KB";*/
+			/*document.getElementById("image_details").innerHTML = "<img src='http://192.168.0.101:8080/hyi_2015_online/php/image_uploads/" + data.file_name + "' /><br />Size: " + data.size + " KB";*/
 		}
 		else if(data.failure) { //Upload failed - show user the reason.
 			alert("Upload Failed: " + data.failure);
@@ -71,7 +71,7 @@
 				<li> 
 				 <div id="upload_form">
 						<!--id="file_upload_form" -->
-						<form  id="file_upload_form" method="post" enctype="multipart/form-data" action="http://192.168.1.4:8080/hyi_2015_online/php/upload_2.php">
+						<form  id="file_upload_form" method="post" enctype="multipart/form-data" action="http://192.168.0.101:8080/hyi_2015_online/php/upload_2.php">
 							<input name="file_id" id="file_id" size="27" type="file" /><br />
 							<input type="submit" name="action" value="Upload Image" /><br /><br>
 							<iframe id="upload_target" name="upload_target" src="" style="width:500px;height:100px;border:1px solid #ccc;"></iframe>

@@ -81,8 +81,8 @@
 	$("#message").empty();
 	$('#loading').show();
 	$.ajax({
-	//url: "http://192.168.1.3:8080/hyi_2015_online/php/new_upload.php", // Url to which the request is send
-	url: "http://192.168.1.4:8080/hyi_2015_online/php/upload_work_correct.php", // Url to which the request is send
+	//url: "http://192.168.0.101:8080/hyi_2015_online/php/new_upload.php", // Url to which the request is send
+	url: "http://192.168.0.101:8080/hyi_2015_online/php/upload_work_correct.php", // Url to which the request is send
 	type: "POST",             // Type of request to be send, called as method
 	data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
 	contentType: false,       // The content type used when sending data to the server.
